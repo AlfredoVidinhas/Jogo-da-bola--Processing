@@ -1,13 +1,14 @@
-float tamJanela = 500;
+float tamJanela = 5000;
 float base = 160;
 float altura = 100;
 
-float tenhoSono = 0.8;
+float jogadorX = 150;
+float jogadorY = 50;
 
-float [] posValidas =  {65, 182, 299};
+float [] posValidas =  {0, 100, 200};
 
-float [] x =  {0, 900,600};
-float [] y =  {posValidas[0], posValidas[1]+65, posValidas[2]+65};
+float [] x =  {0, 2900, 2700};
+float [] y =  {posValidas[0], posValidas[1], posValidas[2]};
 
 void setup()
 {
@@ -18,15 +19,19 @@ void setup()
 void draw()
 {
    background(104,155,208);
+   
    tamJanela -= 1.5;
-   translate(tamJanela, 200);
+   translate(tamJanela, 100);
    fill(0);
+   
    for(int i = 0; i < y.length; i++)
    {
      rect(x[i], y[i], base, altura);
    }
-   tenhoSono += 1.5;
-   translate(tenhoSono, 481/2);
+   
+   jogadorX += 1.5;
+   translate(jogadorX, jogadorY);
+   
    fill(255);
-   circle(0,0,45); 
+   circle(0,0,50); 
 }
