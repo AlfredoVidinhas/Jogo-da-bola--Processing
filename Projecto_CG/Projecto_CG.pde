@@ -13,8 +13,10 @@ float [] posValidas =  {0, 100, 200};
 
 float [] x =  {0, 500, 1000};
 float [] y =  {posValidas[0], posValidas[1], posValidas[2]};
+float [] vidaX = {1500, 150, 650};
+float [] vidaY = {posValidas[0], posValidas[1], posValidas[2]};
 
-void setup()
+  void setup()
 {
   size(1000, 500);
   noStroke();
@@ -26,13 +28,19 @@ void draw()
 
   percurso -= velocidade;
   translate(percurso, 100);
-  
+
   for (int i = 0; i < y.length; i++)
   {
     fill(0);
     rect(x[i], y[i], base, altura);
   }
-    
+  
+  for(int i = 0; i < vidaX.length; i++)
+  {
+    fill(255);
+    circle(vidaX[i], vidaY[i], 20);
+  }
+
   jogadorX += velocidade;
   translate(jogadorX, jogadorY);
   fill(255);
